@@ -1,4 +1,4 @@
-# Github folder downaloader #
+# Github folder downloader #
 
 ### Description: ###
 
