@@ -52,6 +52,8 @@ class getSrcFromGit():
             print "Invalid github URL, please check"
             exit()
     
+        exit()
+
 
     def load_source(self):
         git = parse(urlopen(self.url)).getroot()
@@ -67,7 +69,6 @@ class getSrcFromGit():
         # This comes from github.com site, it could change in the future
         body = source.cssselect(".css-truncate .js-navigation-open")
 
-        file_list = []
         dir_list = []
 
         for f in body:
@@ -76,7 +77,6 @@ class getSrcFromGit():
 
             # Quick and dirty way to see if is a file or folder
             if len(current_item) > 1:
-                file_list.append(f.text_content())
                 print 'Downloading %s to %s' % (f.text_content(), (self.target_dir + self.localfolder + f.text_content()))
                 urlretrieve (self.githubraw + self.library.replace('/tree', '') + '/' + self.localfolder + f.text_content(), self.target_dir + self.localfolder + f.text_content())
             else:
