@@ -14,14 +14,13 @@ Example project is https://github.com/MaxCDN/php-maxcdn/
 
 Let's say you want to download only the `/src` folder:
 
-
 1. Copy the folder path from the address bar, without the https://github.com part and without the trailing slash:    
     - Given the URL: https://github.com/MaxCDN/php-maxcdn/tree/master/src/
     - Extract: `/MaxCDN/php-maxcdn/tree/master/src`
 
-
-2. Pass it to the script, along with the target folder:    
-`$ python updatelib.py "/MaxCDN/php-maxcdn/tree/master/src" /my/target/dir/`
+2. Pass it to the script, along with the target folder:  
+    * Python: `$ python updatelib.py "/MaxCDN/php-maxcdn/tree/master/src" /my/target/dir/`
+    * PHP:  `$ php updatelib.php "/MaxCDN/php-maxcdn/tree/master/src" /my/target/dir/`
 
 
 ### TODOs: ###

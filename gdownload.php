@@ -17,14 +17,28 @@ Class LibUpdater {
     const GITHUB_URL = 'https://github.com';
     const GITHUB_RAW_URL = 'https://raw.githubusercontent.com';
     
-    public function __construct( $libpath = '/MaxCDN/php-maxcdn/tree/master/src', $localpath = '.' )
+    public function __construct( ...$params )
     {
         
-        if ( !is_dir( $localpath ) ) {
-            mkdir( $localpath, 0775, true );
+        // /MaxCDN/php-maxcdn/tree/master/src
+        
+        if ( count( $params ) == 1 ){
+            echo "Github project required!" . PHP_EOL;
+            echo "Usage: $ php gdownload.php \"/githubuser/project/tree/master/some/folder\" /my/target/dir/" . PHP_EOL;
+            exit;
         }
         
-        $this->targetfolder = $localpath;
+        if ( count( $params ) > 0 ) { 
+            $libpath = $params[0];
+        }
+        
+        if ( count( $params ) > 1 ) { 
+            $this->targetfolder = $params[1];
+        } 
+    
+        if ( !is_dir( $this->targetfolder ) ) {
+            mkdir( $this->targetfolder, 0775, true );
+        }
         
         // Allow HTML5
         libxml_use_internal_errors(true);
@@ -127,7 +141,8 @@ Class LibUpdater {
 
 }
 
-$updater = new LibUpdater();
+$updater = new LibUpdater( $argv[1], $argv[2] );
+
 if ( $updater->downloadLib() ) {
-    echo 'Download complete!';
+    echo 'Download complete!' . PHP_EOL;
 }
