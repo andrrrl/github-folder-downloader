@@ -1,6 +1,6 @@
 <?php
 
-include 'gdownload.php';
+include 'gdownload.class.php';
 
 $download = new LibUpdater( $argv[1], $argv[2] );
 echo 'Building directory tree...' . PHP_EOL;
