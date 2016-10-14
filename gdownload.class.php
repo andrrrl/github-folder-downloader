@@ -126,8 +126,8 @@ Class LibUpdater {
                     if( strpos( $sub, '.' ) !== false ) {
                         
                         // Fix URL 1
-                        if ( strpos( $this->libpath, '/master' ) === false ) {
-                            $this->libpath .= '/master';
+                        if ( strpos( $this->foldertree['remote'][$key], '/master' ) === false ) {
+                            $this->foldertree['remote'][$key] .= '/master';
                         }
 
                         // Fix URL 2
