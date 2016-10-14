@@ -13,7 +13,7 @@ Class LibUpdater {
     public $urls;
     public $localfolder = '';
     public $targetfolder = './tests';
-    public $depth = 0;
+    public $foldertree = [];
 
     const GITHUB_URL = 'https://github.com';
     const GITHUB_RAW_URL = 'https://raw.githubusercontent.com';
@@ -109,7 +109,7 @@ Class LibUpdater {
         
     }
     
-    public function donwloadFiles()
+    public function downloadFiles()
     {
         
         foreach( $this->foldertree['remote'] as $key => $folder ) {
