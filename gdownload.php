@@ -74,7 +74,10 @@ Class LibUpdater {
     
     public function buildFolders( $root_folder )
     {
-                
+        
+        $this->foldertree['remote'][] = $this->url;
+        $this->foldertree['local'][] = $this->targetfolder . $this->localfolder;
+        
         foreach( $root_folder as $key => $folder ) {
             
             if ( ( strpos( $folder[0], '.' ) !== false ) || $folder[0] == '..' ) {
