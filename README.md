@@ -1,5 +1,10 @@
 # Github folder downloader #
 
+### Requirements ###
+
+- PHP >= 5.3
+- DOMDocument extension (depending on your system: `sudo apt-get install` + `php5-dom`, `php7.0-xml` or `php7.1-xml`)
+
 ### Description: ###
 
 - Downloads any project (sub)folder from github, to avoid downloading tests, demos, readme, etc, etc
